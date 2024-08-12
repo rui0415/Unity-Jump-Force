@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip crashSound;
     private AudioSource playerAudio;
+    public GameObject gameOverText;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
             explosionParticle.Play();
             dirtParticle.Stop();
             playerAudio.PlayOneShot(crashSound, 1.0f);
+            gameOverText.SetActive(true);
         }
     }
 }
